@@ -33,12 +33,10 @@ ENV ALPINE_GLIBC 2.35-r0
 ENV AWS_CLI_VERSION 1.25.81
 ENV AXE_SELENIUM_LIBRARY_VERSION 2.1.6
 ENV BROWSER_LIBRARY_VERSION 14.0.0
-ENV CHROMIUM_VERSION 103.0
 ENV DATABASE_LIBRARY_VERSION 1.2.4
 ENV DATADRIVER_VERSION 1.6.0
 ENV DATETIMETZ_VERSION 1.0.6
 ENV FAKER_VERSION 5.0.0
-ENV FIREFOX_VERSION 104.0
 ENV FTP_LIBRARY_VERSION 1.9
 ENV GECKO_DRIVER_VERSION v0.30.0
 ENV IMAP_LIBRARY_VERSION 0.4.5
@@ -62,9 +60,9 @@ COPY bin/run-tests-in-virtual-screen.sh /opt/robotframework/bin/
 # Install system dependencies
 RUN dnf upgrade -y --refresh \
   && dnf install -y \
-    chromedriver-${CHROMIUM_VERSION}* \
-    chromium-${CHROMIUM_VERSION}* \
-    firefox-${FIREFOX_VERSION}* \
+    chromedriver \
+    chromium \
+    firefox \
     npm \
     nodejs \
     python3-pip \
