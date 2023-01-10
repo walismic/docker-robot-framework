@@ -48,6 +48,8 @@ ENV ROBOT_FRAMEWORK_VERSION 5.0.1
 ENV SELENIUM_LIBRARY_VERSION 6.0.0
 ENV SSH_LIBRARY_VERSION 3.8.0
 ENV XVFB_VERSION 1.20
+ENV TRCLI_VERSION 1.3.1
+ENV JUNITPARSER_VERSION 2.8.0
 
 # By default, no reports are uploaded to AWS S3
 ENV AWS_UPLOAD_TO_S3 false
@@ -93,7 +95,9 @@ RUN pip3 install \
   axe-selenium-python==$AXE_SELENIUM_LIBRARY_VERSION \
   PyYAML \
   # Install awscli to be able to upload test reports to AWS S3
-  awscli==$AWS_CLI_VERSION
+  awscli==$AWS_CLI_VERSION \
+  trcli==$TRCLI_VERSION \
+  junitparser==$JUNITPARSER_VERSION
 
 # Gecko drivers
 RUN dnf install -y \
